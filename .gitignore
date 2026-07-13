@@ -1,0 +1,7 @@
+.DS_Store
+.venv-instaloader/
+audit/build/node_modules
+audit/previews-*.png
+audit/*.inspect.ndjson
+dist/
+*.zip
