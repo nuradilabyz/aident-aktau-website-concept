@@ -15,6 +15,8 @@ menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () 
   menu.classList.remove('is-open');
 }));
 
+const revealElements = [...document.querySelectorAll('.reveal')];
+
 if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -24,7 +26,14 @@ if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       }
     });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+  revealElements.forEach((element) => observer.observe(element));
+  // Never leave content hidden if a browser delays intersection checks while
+  // capturing or restoring a long page. The observer still reveals in-view
+  // content first; this is a short progressive-enhancement fallback.
+  window.setTimeout(() => {
+    revealElements.forEach((element) => element.classList.add('is-visible'));
+    observer.disconnect();
+  }, 350);
 } else {
-  document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+  revealElements.forEach((element) => element.classList.add('is-visible'));
 }
