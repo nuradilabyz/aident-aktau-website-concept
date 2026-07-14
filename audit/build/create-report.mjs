@@ -50,15 +50,15 @@ const sheets = [
   {
     name: "Website Production",
     columns: ["Концепция", "Фирменные цвета", "Стек", "Репозиторий", "Публичный сайт", "Хостинг", "Дата деплоя", "Статус"],
-    rows: [["Предварительный одностраничный сайт: выбор услуг, о клинике, отзывы 2GIS, карта 2GIS и запись в WhatsApp", "Чёрный/белый логотип; тёплый нейтральный интерфейс", "HTML, CSS, JavaScript", "https://github.com/nuradilabyz/aident-aktau-website-concept", "https://nuradilabyz.github.io/aident-aktau-website-concept/", "GitHub Pages через GitHub Actions", "14.07.2026", "Обновление подготовлено к деплою. noindex, nofollow и запрет в robots.txt сохранены. WhatsApp взят из 2GIS и ждёт подтверждения владельцем; график не опубликован."]],
+    rows: [["Предварительный одностраничный сайт: выбор услуг, о клинике, отзывы 2GIS, карта 2GIS и запись в WhatsApp", "Чёрный/белый логотип; тёплый нейтральный интерфейс", "HTML, CSS, JavaScript", "https://github.com/nuradilabyz/aident-aktau-website-concept", "https://nuradilabyz.github.io/aident-aktau-website-concept/", "GitHub Pages через GitHub Actions", "14.07.2026", "Опубликовано и повторно проверено QA. noindex, nofollow и запрет в robots.txt сохранены. WhatsApp взят из 2GIS и ждёт подтверждения владельцем; график не опубликован."]],
   },
   {
     name: "QA Report",
     columns: ["Устройство", "Разрешение", "Скриншот", "Проверенные элементы", "Найденные ошибки", "Исправления", "Повторная проверка", "Итоговый статус"],
     rows: [
-      ["Компьютер", "1440 px", "audit/qa-screenshots/desktop-1440-final-hero.png", "Полная страница, hero, контакты и карта; HTTPS; ссылки; консоль; SEO и OG", "В первом проходе найден пустой alt у hero-логотипа", "alt заполнен и опубликован отдельным деплоем", "Повторно проверено на live-версии с cache-busting URL", "QA PASSED"],
-      ["Планшет", "768 px", "audit/qa-screenshots/tablet-768-final-hero.png", "Адаптив, читаемость, меню, якоря, отсутствие горизонтальной прокрутки", "Нет после исправления", "Не требуется", "Повторно проверено на live-версии", "QA PASSED"],
-      ["Мобильный", "390 px", "audit/qa-screenshots/mobile-390-final-hero.png", "Мобильное меню, фиксированная кнопка звонка, ссылки, отображение hero", "Нет после исправления", "Не требуется", "Повторно проверено на live-версии", "QA PASSED"],
+      ["Компьютер", "1440 px", "audit/qa-screenshots/redesign-recheck-1440-full.png; redesign-recheck-1440-contacts-map.png", "Полная страница, hero, услуги, отзывы, контакты и карта; HTTPS; ссылки; console; SEO и OG", "На первом проходе карта 2GIS была чрезмерно затемнена — география читалась плохо", "Ослаблено overlay-затемнение; CTA маршрута получила отдельную контрастную подложку; опубликован новый CSS URL", "Повторно проверено на live-версии ?qa=map-fix-20260714: улицы, точка Aident, адрес и CTA читаемы", "QA PASSED"],
+      ["Планшет", "768 px", "audit/qa-screenshots/redesign-recheck-768-full.png", "Полная страница; hero, услуги, отзывы, контакты; отсутствие горизонтальной прокрутки и ошибок консоли", "Нет после исправления", "Не требуется", "На live-версии 753 px контента ≤ 768 px viewport; console []", "QA PASSED"],
+      ["Мобильный", "390 px", "audit/qa-screenshots/redesign-recheck-390-full.png; redesign-recheck-390-menu-open.png; redesign-recheck-390-contacts-map.png; redesign-recheck-390-map-lower-sticky.png", "Полная страница, hero, услуги, отзывы, мобильное меню, фиксированная WhatsApp-кнопка, карта и нижняя область", "Нет после исправления", "Не требуется", "На live-версии 375 px контента ≤ 390 px viewport; меню aria-expanded=true; CTA не закрывает кнопку карты", "QA PASSED"],
     ],
   },
   {
